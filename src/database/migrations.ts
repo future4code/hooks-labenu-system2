@@ -26,7 +26,7 @@ const createTables = async (): Promise <void> => {
             	email VARCHAR(255) UNIQUE NOT NULL,
             	dOb DATE NOT NULL,
                 course_id VARCHAR(255) NOT NULL DEFAULT "Awaiting placement...",
-                FOREIGN KEY (course_id) REFERENCES LabeCourse(id)
+                FOREIGN KEY (course_id) REFERENCES LabeCourses(id)
             );
 
             CREATE TABLE IF NOT EXISTS Hobbies (
@@ -38,34 +38,59 @@ const createTables = async (): Promise <void> => {
 
             CREATE TABLE IF NOT EXISTS Specialties (
                 id VARCHAR(255) PRIMARY KEY,
-                specialty VARCHAR(255) NOT NULL DEFAULT "JS",
+                specialty ENUM("JS", "CSS", "React", "TS", "OOP") NOT NULL DEFAULT "JS",
                 teacher_id VARCHAR(255) NOT NULL,
                 FOREIGN KEY (teacher_id) REFERENCES LabeTeachers(id)
             );
-       	`).then(()=> populateUsersTable())
-        
-        console.log("Tables successfully created.")       	
-    } catch (error) {
-        console.log("Failed to create table.")
-        console.log(error.sqlMessage)
+       	`)
+            
+        console.log("Tables successfully created.")	
+    } catch (error: any) {
+        printError(error)
     }
 };
 
-const populateUsersTable = async(): Promise<void> => {
+const populateTables = async(): Promise<void> => {
     try {
-        await connection("Labecoursees").insert(baseCourses[0]).insert(baseCourses[1]);
+        await connection("LabeCourses")
+            .insert(baseCourses)
+            .then(() => console.log(`LabeCourses populated!`))
+            .catch((error: any) => printError(error));
         
-        await connection("LabeTeachers").insert(baseTeachers[0]).insert(baseTeachers[1]);
-        await connection("LabeStudents").insert(baseStudents[0]).insert(baseStudents[1]);
-        await connection("Hobbies").insert(baseHobbies[0]).insert(baseHobbies[1]);
-        await connection("Specialties").insert(baseSpecialty[0]);
+        await connection("LabeTeachers")
+            .insert(baseTeachers)
+            .then(() => console.log(`LabeTeachers populated!`))
+            .catch((error: any) => printError(error));
+
+        await connection("LabeStudents")   
+            .insert(baseStudents)
+            .then(() => console.log(`LabeStudents populated!`))
+            .catch((error: any) => printError(error));
+
+        await connection("Hobbies")
+            .insert(baseHobbies)
+            .then(() => console.log(`Hobbies populated!`))
+            .catch((error: any) => printError(error));
+
+        await connection("Specialties")
+            .insert(baseSpecialty)
+            .then(() => console.log(`Specialties populated!`))
+            .catch((error: any) => printError(error));
       
 
-            console.log("Table successfully populated.")
+        console.log("Tables successfully populated.")
     } catch (error) {
         console.log("Failed to populate table.")
-        console.log(error.sqlMessage)
+        printError(error)
     };   
 };
 
-createTables().finally(()=> process.exit());
+
+const printError = (error: any) => {
+    console.log(error.sqlMessage || error.message)
+};
+
+console.log(baseSpecialty)
+createTables()
+.then(()=> populateTables())
+.finally(()=> process.exit());

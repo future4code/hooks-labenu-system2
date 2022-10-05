@@ -1,6 +1,6 @@
 import { Course } from "../models/Course";
 import { Hobby } from "../models/Hobby";
-import { Specialty, TECHS } from "../models/Specialty";
+import { Specialty } from "../models/Specialty";
 import { Student } from "../models/Student";
 import { Teacher } from "../models/Teacher";
 
@@ -21,10 +21,10 @@ export const baseTeachers = [
 
 export const baseHobbies = [
     new Hobby("1", "Bike", "DEF"),
-    new Hobby("2", "Game", "A1")
+    new Hobby("2", "Game", "ABC")
 ];
 
 export const baseSpecialty = [
-    new Specialty("haha", TECHS.JS, "XXX"),
-    new Specialty("hihi", TECHS.TS, "ZZZ")
+    new Specialty("haha", "JS", "XXX"),
+    new Specialty("hihi", "TS", "ZZZ")
 ];
