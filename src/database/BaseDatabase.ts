@@ -15,4 +15,24 @@ export abstract class BaseDatabase {
                 multipleStatements: true
             },
     });  
+
+    abstract TABLE_NAME: string;
+
+    protected setNewObject = async (item: any): Promise<void> => {
+        await BaseDatabase.connection(this.TABLE_NAME).insert(item);
+    };
+
+    protected getObjectBySpecifics = async (param: any, value: any): Promise<any> => {
+        const result = await BaseDatabase.connection(this.TABLE_NAME)
+            .select()
+            .where({param: value});
+        
+            return result;
+    };
+
+    protected setUpdate = async(WProp: string, WValue: any, UProp: string, UValue: any): Promise<void> => {
+        await BaseDatabase.connection(this.TABLE_NAME)
+            .where(`${WProp}`, `${WValue}`)
+            .update(`${UProp}`,`${UValue}`);
+    };
 };
