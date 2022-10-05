@@ -1,8 +1,8 @@
 import { Request, Response } from "express";
 import {v4 as generateId} from 'uuid';
 import { TeacherDb } from "../database/TeacherDatabase";
-import { Teacher } from "../models/Teacher";
-import { Specialty } from "../models/Specialty";
+import { ITeacher } from "../models/Teacher";
+import { ISpecialty } from "../models/Specialty";
 import { SpecialtiesDb } from "../database/SpecialtiesDatabase";
 
 
@@ -21,8 +21,8 @@ export const createTeacher = async (req: Request, res: Response) => {
             throw new Error ("E-mail already registered in our database.")
         };
 
-        const newTeacher = new Teacher(generateId(), name, email, formatDoB, course_name);
-        const newSpecialty = new Specialty(generateId(), specialty, newTeacher.getId());
+        const newTeacher = new ITeacher(generateId(), name, email, formatDoB, course_name);
+        const newSpecialty = new ISpecialty(generateId(), specialty, newTeacher.getId());
 
         await new TeacherDb().setNewObject(newTeacher)
             .then(async () => await new SpecialtiesDb().setNewObject(newSpecialty));

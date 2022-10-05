@@ -1,4 +1,4 @@
-export class Hobby {
+export class IHobby {
     constructor(
         private id: string,
         private hobby: string,

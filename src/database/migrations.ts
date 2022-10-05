@@ -85,12 +85,11 @@ const populateTables = async(): Promise<void> => {
     };   
 };
 
-
 const printError = (error: any) => {
     console.log(error.sqlMessage || error.message)
 };
 
-console.log(baseSpecialty)
+
 createTables()
 .then(()=> populateTables())
 .finally(()=> process.exit());

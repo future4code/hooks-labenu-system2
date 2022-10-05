@@ -1,4 +1,4 @@
-export class Specialty {
+export class ISpecialty {
     constructor(
         private id: string,
         private specialty: TECHS,

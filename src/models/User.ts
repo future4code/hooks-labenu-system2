@@ -1,4 +1,4 @@
-export abstract class User {
+export abstract class IUser {
     constructor(
         protected id: string,
         protected name: string,
