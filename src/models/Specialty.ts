@@ -1,15 +1,16 @@
-export enum TECHS {
-    JS= "JavaScript",
-    CSS = "CSS",
-    React = "ReactJS",
-    TS = "Typescript",
-    OOP = "Object Oriented Programming"
-};
-
-export class Specialty {
+export class ISpecialty {
     constructor(
-        id: string,
-        name: TECHS,
-        teacher_id: string
+        private id: string,
+        private specialty: TECHS,
+        private teacher_id: string
     ){}
 };
+
+export enum TECHS {
+    JS= "JS",
+    CSS = "CSS",
+    React = "React",
+    TS = "TS",
+    OOP = "OOP"
+};
+

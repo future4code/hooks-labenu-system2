@@ -1,6 +1,6 @@
-import { User } from "./User";
+import { IUser } from "./User";
 
-export class Student extends User {
+export class IStudent extends IUser {
     constructor(
         id: string,
         name: string,

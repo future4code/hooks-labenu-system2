@@ -1,4 +1,4 @@
-import { Specialty } from "../models/Specialty";
+import { ISpecialty } from "../models/Specialty";
 import { BaseDatabase } from "./BaseDatabase";
 
 
@@ -6,7 +6,7 @@ export class SpecialtiesDb extends BaseDatabase {
     TABLE_NAME = 'Specialties';
 
     
-    public setNewObject = async(specialty: Specialty): Promise<void> => {
+    public setNewObject = async(specialty: ISpecialty): Promise<void> => {
         super.setNewObject(specialty)
     };
 };

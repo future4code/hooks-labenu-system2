@@ -1,4 +1,4 @@
-import { Student } from "../models/Student";
+import { IStudent } from "../models/Student";
 import { BaseDatabase } from "./BaseDatabase";
 
 
@@ -6,11 +6,11 @@ export class StudentDb extends BaseDatabase {
     TABLE_NAME = 'LabeStudents';
 
 
-    public setNewObject = async(student: Student): Promise<void> => {
+    public setNewObject = async(student: IStudent): Promise<void> => {
         super.setNewObject(student)
     };
 
-    public getObjectBySpecifics = async(column: string, search: string): Promise<Student> => {
+    public getObjectBySpecifics = async(column: string, search: string): Promise<IStudent> => {
         return super.getObjectBySpecifics(column, search)
     };
 

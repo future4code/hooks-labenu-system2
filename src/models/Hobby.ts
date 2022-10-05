@@ -1,7 +1,7 @@
-export class Hobby {
+export class IHobby {
     constructor(
         private id: string,
-        private name: string,
+        private hobby: string,
         private student_id: string
     ){}
 };

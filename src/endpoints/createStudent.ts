@@ -2,8 +2,8 @@ import { Request, Response } from "express";
 import {v4 as generateId} from 'uuid';
 import { HobbiesDb } from "../database/HobbiesDatabase";
 import { StudentDb } from "../database/StudentDatabase";
-import { Hobby } from "../models/Hobby";
-import { Student } from "../models/Student";
+import { IHobby } from "../models/Hobby";
+import { IStudent } from "../models/Student";
 
 export const createStudent = async (req: Request, res: Response) => {
     let errorCode = 400;
@@ -20,8 +20,8 @@ export const createStudent = async (req: Request, res: Response) => {
             throw new Error ("E-mail already registered in our database.")
         };
 
-        const newStudent = new Student(generateId(), name, email, formatDoB, course_id);
-        const newHobby = new Hobby(generateId(), hobby, newStudent.getId());
+        const newStudent = new IStudent(generateId(), name, email, formatDoB, course_id);
+        const newHobby = new IHobby(generateId(), hobby, newStudent.getId());
 
         await new StudentDb().setNewObject(newStudent)
             .then(async () => await new HobbiesDb().setNewObject(newHobby));
