@@ -1,4 +1,5 @@
 import { app } from "./app";
+import { baseSpecialty } from "./database/data";
 import { createCourse } from "./endpoints/createCourse";
 import { createStudent } from "./endpoints/createStudent";
 import { createTeacher } from "./endpoints/createTeacher";
@@ -18,3 +19,5 @@ app.put("/courses/course/details", switchCourseModule);
 app.put("/students/student/details", switchStudentCourse);
 
 // app.put("/",)
+
+console.log(baseSpecialty)
