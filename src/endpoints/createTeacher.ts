@@ -10,18 +10,18 @@ export const createTeacher = async (req: Request, res: Response) => {
     let errorCode = 400;
 
     try {
-        const {name, email, dOb, course_name, specialty} = req.body;
-        const formatDoB = new Date(dOb.slice(6,10), dOb.slice(0,2), dOb.slice(3,5));
-
-        if(!name || !email || !email.includes('@') || !formatDoB || course_name) throw new Error ("You must inform a name, valid e-mail and date of birth(MM/DD/YYYY).");
-
-        const verifyEmail = await new TeacherDb().getObjectBySpecifics("email", email);
+        const {name, email, course_name, specialty} = req.body;
+        
+        if(!name || !email || !email.includes('@') || !course_name) 
+            throw new Error ( "You must inform a name and valid e-mail .");
+        const banco =  new TeacherDb();
+        const verifyEmail = await banco.getObjectBySpecifics("email", email);
         if (verifyEmail) {
             errorCode = 411;
             throw new Error ("E-mail already registered in our database.")
         };
 
-        const newTeacher = new ITeacher(generateId(), name, email, formatDoB, course_name);
+        const newTeacher = new ITeacher(generateId(), name, email, course_name);
         const newSpecialty = new ISpecialty(generateId(), specialty, newTeacher.getId());
 
         await new TeacherDb().setNewObject(newTeacher)

@@ -9,10 +9,10 @@ export const createStudent = async (req: Request, res: Response) => {
     let errorCode = 400;
 
     try {
-        const {name, email, dOb, course_id, hobby} = req.body;
-        const formatDoB = new Date(dOb.slice(6,10), dOb.slice(0,2), dOb.slice(3,5));
+        const {name, email, course_id, hobby} = req.body;
 
-        if(!name || !email || !email.includes('@') || !formatDoB) throw new Error ("You must inform a name, valid e-mail and date of birth(MM/DD/YYYY).");
+
+        if(!name || !email || !email.includes('@')) throw new Error ("You must inform a name, valid e-mail and date of birth(MM/DD/YYYY).");
 
         const verifyEmail = await new StudentDb().getObjectBySpecifics("email", email);
         if (verifyEmail) {
@@ -20,7 +20,7 @@ export const createStudent = async (req: Request, res: Response) => {
             throw new Error ("E-mail already registered in our database.")
         };
 
-        const newStudent = new IStudent(generateId(), name, email, formatDoB, course_id);
+        const newStudent = new IStudent(generateId(), name, email, course_id);
         const newHobby = new IHobby(generateId(), hobby, newStudent.getId());
 
         await new StudentDb().setNewObject(newStudent)

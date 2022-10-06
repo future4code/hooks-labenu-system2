@@ -1,5 +1,5 @@
 ### createCourse
-POST http://localhost:3306/courses;
+POST http://localhost:3306/courses
 Content-Type: application/json
 
 {
@@ -14,8 +14,9 @@ Content-Type: application/json
 {
     "name": "Giulia",
     "email": "giulia@email.com",
-    "dOb": 1996-06-14,
-    "course_name": "QA"
+    "dOb": 14061996,
+    "course_name": "QA",
+    "specialty": "React"
 }
 }
 ### createStudent
@@ -31,13 +32,12 @@ Content-Type: application/json
 get http://localhost:3306/courses/active 
 
 ### getAllTeachers
-get http://localhost:3306/teachers 
+get http://localhost:3306/teachers
+
 
 ### getStudentByName
-get http://localhost:3306/students/ 
-{    
-    "name": "Giovanna",  
-}
+get http://localhost:3306/students/:name
+
 ### switchCourseModule
 put http://localhost:3306/courses/course/details 
 {    

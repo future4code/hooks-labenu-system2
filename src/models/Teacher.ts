@@ -5,14 +5,13 @@ export class ITeacher extends IUser {
         id: string,
         name: string,
         email: string,
-        dOb: Date,
-        protected course_name: string
+        private course_name: string
     ){
         super(
             id,
             name,
-            email,
-            dOb
+            email
         )
     }
+   
 };

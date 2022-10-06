@@ -15,8 +15,7 @@ const createTables = async (): Promise <void> => {
             	id VARCHAR(255) PRIMARY KEY,
             	name VARCHAR(255) NOT NULL,
             	email VARCHAR(255) UNIQUE NOT NULL,
-            	dOb DATE NOT NULL,
-                course_name VARCHAR(255) NOT NULL,
+            	course_name VARCHAR(255) NOT NULL,
                 FOREIGN KEY (course_name) REFERENCES LabeCourses(name)
             );
 
@@ -24,8 +23,7 @@ const createTables = async (): Promise <void> => {
             	id VARCHAR(255) PRIMARY KEY,
             	name VARCHAR(255) NOT NULL,
             	email VARCHAR(255) UNIQUE NOT NULL,
-            	dOb DATE NOT NULL,
-                course_id VARCHAR(255) NOT NULL DEFAULT "Awaiting placement...",
+            	course_id VARCHAR(255) NOT NULL DEFAULT "Awaiting placement...",
                 FOREIGN KEY (course_id) REFERENCES LabeCourses(id)
             );
 

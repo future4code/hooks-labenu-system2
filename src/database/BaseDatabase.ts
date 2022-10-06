@@ -19,7 +19,7 @@ export abstract class BaseDatabase {
     abstract TABLE_NAME: string;
 
     protected setNewObject = async (item: any): Promise<void> => {
-        await BaseDatabase.connection(this.TABLE_NAME).insert(item);
+        await  BaseDatabase.connection(this.TABLE_NAME).insert(item);
     };
 
     protected getObjectBySpecifics = async (param: any, value: any): Promise<any> => {

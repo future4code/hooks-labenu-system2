@@ -5,8 +5,8 @@ import { IStudent } from "../models/Student";
 import { ITeacher } from "../models/Teacher";
 
 export const baseStudents = [
-    new IStudent("ABC", "Gina", "gi@gmail.com", new Date(1998, 11, 7), "A1"),
-    new IStudent("DEF", "Nitchos", "pess@gmail.com", new Date(2018, 8, 25), "A2")
+    new IStudent("ABC", "Gina", "gi@gmail.com","A1"),
+    new IStudent("DEF", "Nitchos", "pess@gmail.com","A2")
 ];
 
 export const baseCourses = [
@@ -15,8 +15,8 @@ export const baseCourses = [
 ];
 
 export const baseTeachers = [
-    new ITeacher("ZZZ", "Rodrigo", "ro@lbn.com", new Date(1980, 1, 1), "Polimorfism" ),
-    new ITeacher("XXX", "PH", "phVasco@lbn.com", new Date(1980, 2, 2), "Static and Abstract")
+    new ITeacher("ZZZ", "Rodrigo", "ro@lbn.com", "Polimorfism" ),
+    new ITeacher("XXX", "PH", "phVasco@lbn.com", "Static and Abstract")
 ];
 
 export const baseHobbies = [
