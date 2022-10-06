@@ -1,0 +1,52 @@
+### createCourse
+POST http://localhost:3306/courses;
+Content-Type: application/json
+
+{
+    "name": "Curso QA",
+    "module": 0,
+}
+
+### createTeacher
+POST http://localhost:3306/teachers
+Content-Type: application/json
+{
+{
+    "name": "Giulia",
+    "email": "giulia@email.com",
+    "dOb": 1996-06-14,
+    "course_name": "QA"
+}
+}
+### createStudent
+POST http://localhost:3306/students
+Content-Type: application/json
+{
+    "nome": "Fabi",
+    "email": "fabi@email.com",
+    "dOb": 1986-09-18,
+}
+
+### getActiveCourses
+get http://localhost:3306/courses/active 
+
+### getAllTeachers
+get http://localhost:3306/teachers 
+
+### getStudentByName
+get http://localhost:3306/students/ 
+{    
+    "name": "Giovanna",  
+}
+### switchCourseModule
+put http://localhost:3306/courses/course/details 
+{    
+    "id": "",
+    "module": 0,
+}
+### switchStudentCourse
+put http://localhost:3306/students/student/details 
+{    
+    "course_id": "",
+    "id": 0,
+}
