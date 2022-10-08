@@ -7,7 +7,7 @@ export const getAllTeachers = async (req: Request, res: Response) => {
     try {
         const faculty = await new TeacherDb().getAllTeachers();
 
-        res.status(200).send("Meet our faculty and staff:" + faculty);
+        res.status(200).send({ message: "Meet our faculty and staff:", faculty: faculty });
     } catch (error: any) {
         res.status(errorCode).send(error.message);
     };

@@ -1,8 +1,8 @@
-import { ICourse } from "../models/Course";
-import { IHobby } from "../models/Hobby";
-import { ISpecialty, TECHS } from "../models/Specialty";
-import { IStudent } from "../models/Student";
-import { ITeacher } from "../models/Teacher";
+import { ICourse } from "../../models/Course";
+import { IHobby } from "../../models/Hobby";
+import { ISpecialty, TECHS } from "../../models/Specialty";
+import { IStudent } from "../../models/Student";
+import { ITeacher } from "../../models/Teacher";
 
 export const baseStudents = [
     new IStudent("ABC", "Gina", "gi@gmail.com", new Date(1998, 11, 7), "A1"),
@@ -10,12 +10,13 @@ export const baseStudents = [
 ];
 
 export const baseCourses = [
+    new ICourse("Awaiting placement...", "Waitlist", 0),
     new ICourse("A1", "Polimorfism", 4),
     new ICourse("A2", "Static and Abstract", 3)
 ];
 
 export const baseTeachers = [
-    new ITeacher("ZZZ", "Rodrigo", "ro@lbn.com", new Date(1980, 1, 1), "Polimorfism" ),
+    new ITeacher("ZZZ", "Rodrigo", "ro@lbn.com", new Date(1980, 1, 1), "Polimorfism"),
     new ITeacher("XXX", "PH", "phVasco@lbn.com", new Date(1980, 2, 2), "Static and Abstract")
 ];
 

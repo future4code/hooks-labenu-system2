@@ -1,12 +1,12 @@
 import { IUser } from "./User";
 
 export class IStudent extends IUser {
-    constructor(
+    public constructor(
         id: string,
         name: string,
         email: string,
         dOb: Date,
-        protected course_id: string
+        private course_id: string
     ){
         super(
             id,
@@ -15,4 +15,8 @@ export class IStudent extends IUser {
             dOb
         )
     } 
+
+    public getCourse_id() {
+        return this.course_id
+    }
 };

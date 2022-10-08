@@ -4,17 +4,18 @@
 <br/>
 
 <h2>📜 Documentation</h2>
-<p>You can find all the documentation here:<p>🖋️<a href="link Postman">Postman: LabenuSystem</a>.
+<!-- <p>You can find all the documentation here:<p>🖋️<a href="link Postman">Postman: LabenuSystem</a>. -->
+<p>The simplified version of the documentatio is presented in the request.rest file/root directory.</p>
 <hr>
 <br/>
 
 <h2>🔆 What's working:</h2>
-<p>Endpoints GET(getAllTeachers, getStudentByName, getActiveCorses), POST(createCourse, createStudent, createTeacher), PUT (switchCorseModule, switchStudentCourse, switchTeacherCourse).
+<p>Endpoints GET(getAllTeachers, getStudentByName, getActiveCorses), POST(createCourse, createStudent, createTeacher).
 <hr>
 <br/>
 
 <h2>🔅 What's not working:</h2>
-<p>So far, this project is presented fully functional.</p>
+<p>Endpoints PUT (switchCorseModule, switchStudentCourse, switchTeacherCourse) are not recognizing incoming data nor types as for right now. Formatted dates are failing to return matching values to the inserted ones.</p>
 <hr>
 <br/>
 

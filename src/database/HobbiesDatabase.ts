@@ -5,8 +5,7 @@ import { BaseDatabase } from "./BaseDatabase";
 export class HobbiesDb extends BaseDatabase {
     TABLE_NAME = 'Hobbies';
 
-
-    public setNewObject = async(hobby: IHobby): Promise<void> => {
+    public async setNewObject(hobby: IHobby) {
         super.setNewObject(hobby)
-    };
+    }
 };

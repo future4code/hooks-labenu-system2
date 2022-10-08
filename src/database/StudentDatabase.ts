@@ -6,16 +6,16 @@ export class StudentDb extends BaseDatabase {
     TABLE_NAME = 'LabeStudents';
 
 
-    public setNewObject = async(student: IStudent): Promise<void> => {
+    public async setNewObject(student: IStudent) {
         super.setNewObject(student)
-    };
+    }
 
-    public getObjectBySpecifics = async(column: string, search: string): Promise<IStudent> => {
-        return super.getObjectBySpecifics(column, search)
-    };
+    public async getObjectBySpecifics(column: string, value: string) {
+        return super.getObjectBySpecifics(column, value)
+    }
 
-    public setUpdate = async(WProp: string, WValue: any, UProp: string, UValue: any): Promise<void> => {
+    public async setUpdate(WProp: string, WValue: any, UProp: string, UValue: any) {
         super.setUpdate(WProp, WValue, UProp, UValue)
-    };
+    }
 
 };

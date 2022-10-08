@@ -6,7 +6,7 @@ export class ITeacher extends IUser {
         name: string,
         email: string,
         dOb: Date,
-        protected course_name: string
+        private course_name: string
     ){
         super(
             id,
@@ -14,5 +14,9 @@ export class ITeacher extends IUser {
             email,
             dOb
         )
+    }
+
+    public getCourse() {
+        return this.course_name
     }
 };
