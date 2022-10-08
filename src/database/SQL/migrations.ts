@@ -25,7 +25,7 @@ const createTables = async (): Promise <void> => {
             	name VARCHAR(255) NOT NULL,
             	email VARCHAR(255) UNIQUE NOT NULL,
             	dOb DATE NOT NULL,
-                course_id VARCHAR(255) NOT NULL DEFAULT "Awaiting placement...",
+                course_id VARCHAR(255)DEFAULT "Awaiting placement", 
                 FOREIGN KEY (course_id) REFERENCES LabeCourses(id)
             );
 

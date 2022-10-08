@@ -1,52 +1,51 @@
-### createCourse
-POST http://localhost:3306/courses;
+### createCourse (OK)
+POST http://localhost:3306/courses
 Content-Type: application/json
 
 {
-    "name": "Curso QA",
-    "module": 0,
+    "name": "Hooks-journey",
+    "module": 1
 }
 
-### createTeacher
+### createTeacher (OK)
 POST http://localhost:3306/teachers
 Content-Type: application/json
+
 {
-{
-    "name": "Giulia",
-    "email": "giulia@email.com",
-    "dOb": 1996-06-14,
-    "course_name": "QA"
+    "name": "Lbn",
+    "email": "giovanna@email.com",
+    "dOb": "07111998",
+    "course_name": "Polimorfism"
 }
-}
-### createStudent
+
+### createStudent (OK)
 POST http://localhost:3306/students
 Content-Type: application/json
+
 {
-    "nome": "Fabi",
-    "email": "fabi@email.com",
-    "dOb": 1986-09-18,
+    "name": "Fabi",
+    "email": "fabi@gmail.com",
+    "dOb": "19860918"
 }
 
-### getActiveCourses
-get http://localhost:3306/courses/active 
+### getActiveCourses (OK)
+GET http://localhost:3306/courses/active 
 
-### getAllTeachers
-get http://localhost:3306/teachers 
+### getAllTeachers (OK)
+GET http://localhost:3306/teachers 
 
-### getStudentByName
-get http://localhost:3306/students/ 
-{    
-    "name": "Giovanna",  
-}
+### getStudentByName (OK)
+GET http://localhost:3306/students?name=fabi 
+
 ### switchCourseModule
-put http://localhost:3306/courses/course/details 
-{    
-    "id": "",
-    "module": 0,
-}
+PUT http://localhost:3306/courses/course/details?id=A1&module=0
+
 ### switchStudentCourse
-put http://localhost:3306/students/student/details 
+PUT http://localhost:3306/students/student/details?id=ABC
+
 {    
-    "course_id": "",
-    "id": 0,
+    "course_id": "A1"
 }
+
+### switchTeacherCourse
+PUT http://localhost:3306/teachers/teacher/details?id=ZZZ&course_name=Polimorfism

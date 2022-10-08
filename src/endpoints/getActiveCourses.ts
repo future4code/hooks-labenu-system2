@@ -7,7 +7,7 @@ export const getActiveCourses = async (req: Request, res: Response) => {
     try {
         const activeCourses = await new CourseDb().getActiveCourses();
 
-        res.status(200).send("Here are our current active courses:" + activeCourses)
+        res.status(200).send({  activeCourses });
     } catch (error: any) {
         res.status(errorCode).send(error.message);
     };

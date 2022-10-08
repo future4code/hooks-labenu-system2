@@ -6,17 +6,21 @@ export class TeacherDb extends BaseDatabase {
     TABLE_NAME = 'LabeTeachers';
 
 
-    public setNewObject = async(teacher: ITeacher): Promise<void> => {
+    public async setNewObject(teacher: ITeacher) {
         super.setNewObject(teacher)
-    };
-
-    public getObjectBySpecifics = async(email: string, search: string): Promise<ITeacher> => {
-        return super.getObjectBySpecifics(email, search)
     }
 
-    public getAllTeachers = async(): Promise<ITeacher[]> => {
+    public async getObjectBySpecifics(column: string, email: string) {
+        return super.getObjectBySpecifics(column, email)
+    }
+
+    public async setUpdate(WProp: string, WValue: any, UProp: string, UValue: any) {
+        super.setUpdate(WProp, WValue, UProp, UValue)
+    }
+
+    public async getAllTeachers() {
         const result = await BaseDatabase.connection(this.TABLE_NAME).select()
-        
+
         return result
     }
 };
