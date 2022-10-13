@@ -1,0 +1,51 @@
+### createCourse (OK)
+POST http://localhost:3306/courses
+Content-Type: application/json
+
+{
+    "name": "Hooks-journey",
+    "module": 1
+}
+
+### createTeacher (OK)
+POST http://localhost:3306/teachers
+Content-Type: application/json
+
+{
+    "name": "Lbn",
+    "email": "giovanna@email.com",
+    "dOb": "07111998",
+    "course_name": "Polimorfism"
+}
+
+### createStudent (OK)
+POST http://localhost:3306/students
+Content-Type: application/json
+
+{
+    "name": "Fabi",
+    "email": "fabi@gmail.com",
+    "dOb": "19860918"
+}
+
+### getActiveCourses (OK)
+GET http://localhost:3306/courses/active 
+
+### getAllTeachers (OK)
+GET http://localhost:3306/teachers 
+
+### getStudentByName (OK)
+GET http://localhost:3306/students?name=fabi 
+
+### switchCourseModule
+PUT http://localhost:3306/courses/course/details?id=A1&module=0
+
+### switchStudentCourse
+PUT http://localhost:3306/students/student/details?id=ABC
+
+{    
+    "course_id": "A1"
+}
+
+### switchTeacherCourse
+PUT http://localhost:3306/teachers/teacher/details?id=ZZZ&course_name=Polimorfism

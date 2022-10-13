@@ -1,33 +1,45 @@
-## LabenuSystem:
+<h1><b>🏫LabenuSystem🏫</b></h1>
+<p>:rocket: Basic system that represents a school organization. </p>
+<hr>
+<br/>
 
-Você estuda na Labenu_ há tanto tempo que já parecem anos, não é? Então, hoje, vamos pedir para criar um sistema que represente o básico da nossa organização. 
+<h2>📜 Documentation</h2>
+<!-- <p>You can find all the documentation here:<p>🖋️<a href="link Postman">Postman: LabenuSystem</a>. -->
+<p>The simplified version of the documentatio is presented in the request.rest file/root directory.</p>
+<hr>
+<br/>
 
-Ele deve possuir, ao menos, as 3 entidades importantes:
+<h2>🔆 What's working:</h2>
+<p>Endpoints GET(getAllTeachers, getStudentByName, getActiveCorses), POST(createCourse, createStudent, createTeacher).
+<hr>
+<br/>
 
-1. Estudantes 
+<h2>🔅 What's not working:</h2>
+<p>Endpoints PUT (switchCorseModule, switchStudentCourse, switchTeacherCourse) are not recognizing incoming data nor types as for right now. Formatted dates are failing to return matching values to the inserted ones.</p>
+<hr>
+<br/>
 
-    Representa estudantes da nossa instituição. Eles devem possuir: id, nome, email, data de nascimento e os principais hobbies dele. 
+<h2>:electron: Technologies:</h2>
+<ul>
+    <li>💡 Express and Cors</li>
+    <li>💡 Knex</li>
+    <li>💡 Dotenv</li>
+    <li>💡 Uuid</li>
+    <li>💡 Typescript</li>
+</ul>
+<hr>
+<br/>
 
-2. Docente
+<h2>💻 What to install after cloning:</h2>
+    <ul>
+        <li>💽 Run a regular 'npm i' OR,</li>
+        <li>💽 'npm i  typescipt express cors uuid ts-node dotenv mysql knex node'</li>
+        <li>💽 all of them (aside from typescript) need 'npm i @types/dependecy -D' and ts-node needs 'npm i ts-node-dev -D'</li>
+    </ul>
+<hr>
+<br/>
 
-    Representa docentes da nossa instituição. Eles devem possuir: id, nome, email, data de nascimento e todas as especialidades dele. Há 7 especialidades: React, Redux, CSS, Testes, Typescript, Programação Orientada a Objetos e Backend
-
-3. Turma
-
-    Toda turma é composta das seguintes características: id, nome, data de início, data de término, lista de professores responsáveis, uma lista de alunos e módulo atual em que a turma está.
-
-    O módulo pode assumir os valores de 1 a 7 ou `undefined`, indicando que as aulas dessa turma ainda não começaram. Para esse exercício, vamos considerar que existam dois tipos de turma: integral ou noturna. Há uma restrição para o nome das turmas noturnas: tem que terminar com `-na-night`.
-
-As funcionalidades básicas são:
-
-→ Criar estudante;
-
-→ Criar docente;
-
-→ Criar turma;
-
-→ Adicionar estudante na turma;
-
-→ Adicionar docente na turma;
-
-→ Pegar a idade de algum estudante a partir do id
+<h2>👩‍💻 Authors</h2>
+<a href="https://github.com/fabidbastos">Fabiana Dias Bastos</a>
+<a href="https://github.com/giojulio">Giovanna Julio</a>
+<a href="https://github.com/giuliaverruck">Giulia Verruck Tortola</a>
